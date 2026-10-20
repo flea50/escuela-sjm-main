@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>Escuela de Líderes - Comunidad Cristiana Agua Viva SJM</title>
+<meta name="theme-color" content="#0b2e1f">
+<link rel="icon" type="image/png" href="icon-192.png">
+<link rel="apple-touch-icon" href="icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&family=Instrument+Serif&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ==================== CARGA / ERROR ==================== -->
+<div id="screen-loading">
+  <div class="loading-box">
+    <img class="login-logo" src="logo.png" alt="Agua Viva">
+    <div class="spinner"></div>
+    <p>Conectando con la base de datos...</p>
+  </div>
+</div>
+<div id="screen-conn-error" class="hidden"></div>
+<div id="screen-vista-selector" class="hidden"></div>
+
+<!-- ==================== LOGIN ==================== -->
+<div id="screen-login" class="hidden">
+  <div class="login-shell">
+    <section class="login-hero">
+      <img class="login-logo" src="logo.png" alt="Comunidad Cristiana Agua Viva">
+      <h1 class="login-display">Escuela<br>de Líderes</h1>
+      <p class="login-line1"><strong>Comunidad Cristiana Agua Viva.</strong> <span>Sede SJM</span></p>
+      <p class="login-line2">Asistencia, devocional y notas en un solo lugar</p>
+    </section>
+    <section class="login-panel">
+      <div class="login-card">
+        <p class="login-card-sub">Ingresa con tu usuario para continuar</p>
+        <div class="login-error" id="login-error">Usuario o clave incorrectos.</div>
+        <form id="login-form">
+          <div class="field-group">
+            <label for="login-dni">Usuario</label>
+            <input type="text" id="login-dni" inputmode="numeric" autocomplete="username" placeholder="Número de DNI" required>
+          </div>
+          <div class="field-group">
+            <label for="login-celular">Contraseña</label>
+            <input type="password" id="login-celular" inputmode="numeric" autocomplete="current-password" placeholder="Número de celular" required>
+          </div>
+          <button type="submit" class="btn-primary">Ingresar</button>
+        </form>
+      </div>
+      <p class="login-hint">El usuario es su número de <b>DNI</b> y la clave es su número de <b>celular</b>.</p>
+    </section>
+  </div>
+</div>
+
+<!-- ==================== APP ==================== -->
+<div id="screen-app" class="hidden">
+  <div id="app-header"></div>
+  <main class="app-body" id="app-body"></main>
+</div>
+
+<div id="modal-host" class="hidden"></div>
+<div class="toast" id="toast"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+<script src="qrcode.js"></script>
+<script src="jsQR.js"></script>
+<script src="config.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
